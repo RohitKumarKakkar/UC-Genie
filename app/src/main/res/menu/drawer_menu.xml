@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ShowIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_black_24dp"
+            android:title="Home" />
+
+        <item
+            android:id="@+id/redeem"
+            android:icon="@drawable/ic_card_giftcard_black_24dp"
+            android:title="Redeem Rewards" />
+
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Share (5 Pts.)" />
+
+        <item
+            android:id="@+id/luckyspin"
+            android:icon="@drawable/ic_person_add_black_24dp"
+            android:title="Lucky Spin" />
+
+    </group>
+
+    <item android:title="Quick Links">
+        <menu>
+            <item
+                android:id="@+id/matches"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="Play Matches to Earn Money" />
+
+            <item
+                android:id="@+id/ratings"
+                android:icon="@drawable/ic_share_black_24dp"
+                android:title="Rate 5 Stars to Earn" />
+
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_power_settings_new_black_24dp"
+                android:title="Logout" />
+        </menu>
+    </item>
+
+</menu>
