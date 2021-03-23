@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.trojan.gamegenie.Fragments.HomeFragment;
+import com.trojan.gamegenie.Fragments.ProfileFragment;
+import com.trojan.gamegenie.OtherFragments.LuckySpin;
 import com.trojan.gamegenie.SlidingNavBar.DrawerAdapter;
 import com.trojan.gamegenie.SlidingNavBar.DrawerItem;
 import com.trojan.gamegenie.SlidingNavBar.SimpleItem;
@@ -88,13 +90,13 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
             Fragment selectedScreen = new HomeFragment();
             showFragment(selectedScreen);
         } else if (position == POS_ACCOUNT) {
-            Fragment selectedScreen = new HomeFragment();
+            Fragment selectedScreen = new ProfileFragment();
             showFragment(selectedScreen);
         } else if (position == POS_REDEEM) {
             Fragment selectedScreen = new HomeFragment();
             showFragment(selectedScreen);
         } else if (position == POS_LUCKY_SPIN) {
-            Fragment selectedScreen = new HomeFragment();
+            Fragment selectedScreen = new LuckySpin();
             showFragment(selectedScreen);
         } else if (position == POS_MATCH_AND_EARN) {
             Fragment selectedScreen = new HomeFragment();

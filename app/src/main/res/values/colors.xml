@@ -5,10 +5,12 @@
     <color name="colorAccent">#4CAF50</color>
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
-    <color name="colorRed">#F44336</color>
-    <color name="colorGreen">#8BC34A</color>
     <color name="colorBlue">#3F51B5</color>
-
+    <color name="lightblue">#2196F3</color>
+    <color name="lightestblue">#9C2196F3</color>
     <color name="textColorPrimary">#212121</color>
     <color name="textColorSecondary">#757575</color>
+    <color name="transparent">#00000000</color>
+    <color name="mainblue">#1a213d</color>
+    <color name="mainbluelight">#C61A213D</color>
 </resources>

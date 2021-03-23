@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -12,44 +13,80 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.MobileAds;
-import com.google.android.gms.ads.reward.RewardItem;
-import com.google.android.gms.ads.reward.RewardedVideoAd;
-import com.google.android.gms.ads.reward.RewardedVideoAdListener;
+import com.trojan.gamegenie.OtherFragments.LuckySpin;
+import com.trojan.gamegenie.OtherFragments.ReferNEarn;
+import com.trojan.gamegenie.OtherFragments.ShareNEarn;
 import com.trojan.gamegenie.R;
 
 public class HomeFragment extends Fragment {
-    Button adBtn, checkinBtn, referbtn, surveyBtn;
-    private RewardedVideoAd rewardedVideoAd;
-    TextView toolbartitle;
+    Button playButton, surveyButton;
+    TextView toolbartitle, tvUsername, tvPoints;
     Context mctx;
+    LinearLayout llreferandearn, llluckyspin, llshareandear, llredeem;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_home, container, false);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
 
         final Toolbar toolbarid = getActivity().findViewById(R.id.toolbarid);
         toolbarid.setVisibility(View.VISIBLE);
 
         toolbartitle = getActivity().findViewById(R.id.toolbar_title);
-        toolbartitle.setText("Dashboard");
+        toolbartitle.setText(R.string.dashboard);
 
         final Animation myAnim = AnimationUtils.loadAnimation(getContext(), R.anim.bounce);
 
-        adBtn = v.findViewById(R.id.playButton);
-        /*checkinBtn = v.findViewById(R.id.checkinButton);
-        referbtn = v.findViewById(R.id.refButton);*/
-        surveyBtn = v.findViewById(R.id.surveyButton);
+        playButton = view.findViewById(R.id.playButton);
+        surveyButton = view.findViewById(R.id.surveyButton);
+        llluckyspin = view.findViewById(R.id.llluckyspin);
+        llredeem = view.findViewById(R.id.llredeem);
+        llreferandearn = view.findViewById(R.id.llreferandear);
+        llshareandear = view.findViewById(R.id.llshareandearn);
+        tvUsername = view.findViewById(R.id.tvUsername);
+        tvPoints = view.findViewById(R.id.tvPoints);
 
-        adBtn.startAnimation(myAnim);
-       /* checkinBtn.startAnimation(myAnim);
-        referbtn.startAnimation(myAnim);*/
-        surveyBtn.startAnimation(myAnim);
 
-        return v;
+        playButton.startAnimation(myAnim);
+        surveyButton.startAnimation(myAnim);
+
+        llreferandearn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toolbartitle = getActivity().findViewById(R.id.toolbar_title);
+                toolbartitle.setText("Refer and Earn");
+                getFragmentManager().beginTransaction().replace(R.id.container, new ReferNEarn()).addToBackStack(null).commit();
+            }
+        });
+
+
+        llluckyspin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toolbartitle = getActivity().findViewById(R.id.toolbar_title);
+                toolbartitle.setText("Lucky Spin");
+                getFragmentManager().beginTransaction().replace(R.id.container, new LuckySpin()).addToBackStack(null).commit();
+            }
+        });
+
+        llshareandear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toolbartitle = getActivity().findViewById(R.id.toolbar_title);
+                toolbartitle.setText("Share App");
+                getFragmentManager().beginTransaction().replace(R.id.container, new ShareNEarn()).addToBackStack(null).commit();
+            }
+        });
+
+        llredeem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        return view;
     }
 }
