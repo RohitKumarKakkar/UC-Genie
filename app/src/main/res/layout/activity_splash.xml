@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainllsplash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".Splash"
+    android:background="@color/colorWhite">
+
+
+    <ImageView
+        android:id="@+id/mainlogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/blueshape"
+        android:src="@drawable/genies"
+        android:layout_centerInParent="true"/>
+
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="UC Genie"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:id="@+id/maintv"
+        android:layout_below="@id/mainlogo"
+        android:layout_marginBottom="50dp"
+        android:textColor="@color/colorBlack"/>
+
+
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@drawable/coin_flip"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/maintv"/>
+
+</RelativeLayout>

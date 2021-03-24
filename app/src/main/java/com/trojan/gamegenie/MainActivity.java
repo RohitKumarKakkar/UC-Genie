@@ -9,9 +9,13 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
 import com.trojan.gamegenie.Fragments.HomeFragment;
@@ -27,6 +31,8 @@ import com.yarolegovich.slidingrootnav.SlidingRootNavBuilder;
 
 import java.util.Arrays;
 
+import pl.droidsonroids.gif.GifImageView;
+
 public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnItemSelectedListener {
     private static final int POS_DASHBOARD = 0;
     private static final int POS_ACCOUNT = 1;
@@ -38,7 +44,7 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
     private String[] screenTitles;
     private Drawable[] screenIcons;
 
-    TextView tvBalance;
+    TextView tvBalance, tvUsernamemain;
 
     private SlidingRootNav slidingRootNav;
 
@@ -78,7 +84,9 @@ public class MainActivity extends AppCompatActivity implements DrawerAdapter.OnI
         list.setAdapter(adapter);
 
         tvBalance = findViewById(R.id.tvBalance);
-        tvBalance.setText("1000");
+        tvUsernamemain = findViewById(R.id.tvUsernameMain);
+        tvBalance.setText("50");
+        tvUsernamemain.setText("Rohit Kumar");
 
         adapter.setSelected(POS_DASHBOARD);
     }

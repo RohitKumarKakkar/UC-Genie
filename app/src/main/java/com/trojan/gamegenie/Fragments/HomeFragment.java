@@ -90,6 +90,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
+        tvUsername.setText("Welcome, Rohit Kumar");
+        tvPoints.setText("50 Pts");
+
         return view;
     }
 }
