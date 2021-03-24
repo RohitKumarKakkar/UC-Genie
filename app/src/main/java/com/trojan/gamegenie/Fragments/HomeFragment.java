@@ -17,6 +17,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.trojan.gamegenie.OtherFragments.LuckySpin;
+import com.trojan.gamegenie.OtherFragments.RedeemRewards;
 import com.trojan.gamegenie.OtherFragments.ReferNEarn;
 import com.trojan.gamegenie.OtherFragments.ShareNEarn;
 import com.trojan.gamegenie.R;
@@ -83,7 +84,9 @@ public class HomeFragment extends Fragment {
         llredeem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                toolbartitle = getActivity().findViewById(R.id.toolbar_title);
+                toolbartitle.setText("My Rewards");
+                getFragmentManager().beginTransaction().replace(R.id.container, new RedeemRewards()).addToBackStack(null).commit();
             }
         });
 
